@@ -8,9 +8,9 @@ sum1 = 0
 sum2 = 0
 with open(path + "z_5.txt", "w", encoding="utf-8") as f:
     for i in range(randint(5, 100)):
-        line = [round(random() * choice([10, 100, 1000, 10000]), 2) for j in range(randint(1, 50))]
+        line = [round(random() * choice([10, 100, 1000, 10000]), 2) for j in range(randint(1, 50))] # noqa
         sum1 += sum(line)
-        print(*line, file = f)
+        print(*line, file=f)
 
 lines = []
 with open(path + "z_5.txt", "r", encoding="utf-8") as f:

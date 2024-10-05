@@ -14,8 +14,7 @@ for line in lines:
 my_list = [
     my_dict,
     {"average_profit":
-        round(mean([profit for profit in my_dict.values() if profit >= 0]), 2)
-    }
+        round(mean([profit for profit in my_dict.values() if profit >= 0]), 2)}
 ]
 
 with open(path + "z_7_out.json", "w") as f:

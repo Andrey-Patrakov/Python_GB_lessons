@@ -1,14 +1,16 @@
 import os
 
+
 def find_time(s):
     my_list = ["(л)", "(пр)", "(лаб)"]
-    for l in my_list:
-        if s.find(l) != 0:
-            num = s.split(l)[0]
+    for ml in my_list:
+        if s.find(ml) != 0:
+            num = s.split(ml)[0]
             if num.isdigit():
                 return int(num)
 
     return 0
+
 
 path = "files/"
 os.makedirs(path, exist_ok=True)
@@ -26,4 +28,3 @@ for line in lines:
         my_dict[lesson] = s
 
 print(my_dict)
-            
