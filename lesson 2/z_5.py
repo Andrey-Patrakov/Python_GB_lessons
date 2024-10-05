@@ -5,5 +5,6 @@ try:
     my_list += list(map(int, num.split()))
     my_list.sort(reverse=True)
     print(*my_list)
-except:
+
+except Exception:
     print("Ошибка ввода данных!")

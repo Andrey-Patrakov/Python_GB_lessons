@@ -8,19 +8,20 @@ i = 1
 my_list = []
 while True:
     os.system("cls")
-    print(*my_list, sep = "\n")
+    print(*my_list, sep="\n")
     print("[название] [цена] [количество] [eд]")
     try:
         inp = input()
-        if inp.strip() == "": 
+        if inp.strip() == "":
             break
         else:
             name, price, count, unit = inp.split()
-            my_list += [(i, {"название": name, "цена": float(price), 
-                "количество": int(count), "eд": unit}
-            )]
+            my_list += [(i, {"название": name,
+                             "цена": float(price),
+                             "количество": int(count),
+                             "eд": unit})]
 
-    except:
+    except Exception:
         print("Ошибка ввода данных!")
         input("Нажмите Enter чтобы продолжить...")
         continue
@@ -51,7 +52,7 @@ analytics = {
 }
 
 os.system("cls")
-print(*my_list, sep = "\n")
+print(*my_list, sep="\n")
 print(f"{'='*40}\nПо товарам была собрана аналитика\n{'='*40}")
 
 for key, value in analytics.items():
