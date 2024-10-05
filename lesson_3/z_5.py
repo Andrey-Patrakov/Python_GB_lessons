@@ -6,12 +6,14 @@ def sum_input():
         for elem in line:
             try:
                 s += float(elem)
-            except:
+
+            except Exception:
                 if elem == 'stop':
                     stop = True
                     break
-                    
+
     return s
+
 
 print("Вводите числа через пробел")
 print("Запрещённые символы игнорируются")

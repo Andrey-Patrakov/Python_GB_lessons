@@ -1,7 +1,8 @@
 def division(a, b):
     try:
         a, b = float(a), float(b)
-        return(str(a/b))
+        return str(a/b)
+
     except Exception as e:
         if type(e) is ZeroDivisionError:
             return 'Ошибка: деление на 0!'
@@ -10,8 +11,10 @@ def division(a, b):
         else:
             return e
 
+
 try:
     a, b = input("Введите 2 числа через пробел: ").split()
     print(division(a, b))
-except:
+
+except Exception:
     print("Ошибка ввода")
