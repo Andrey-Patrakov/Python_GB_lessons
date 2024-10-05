@@ -7,9 +7,9 @@ class Matrix:
                     [float(elem) for elem in row]
                 ) for row in matrix
             ]
-        except:
+        except Exception:
             raise TypeError("Неверный тип данных")
-    
+
     def __str__(self):
         s = [
             "|".join(
@@ -24,14 +24,14 @@ class Matrix:
         if type(other) is Matrix:
             try:
                 for i in range(len(self.matrix)):
-                    res.append([a + b for a, b in zip(self.matrix[i], other.matrix[i])])
-            except:
+                    res.append([a + b for a, b in zip(self.matrix[i],
+                                                      other.matrix[i])])
+            except Exception:
                 pass
 
             return Matrix(res)
-            
-        raise TypeError("Неверный тип данных")
 
+        raise TypeError("Неверный тип данных")
 
 
 matrix_1 = Matrix([
@@ -47,7 +47,7 @@ matrix_2 = Matrix([
     [9, 8, 7, 6],
     [8, 7, 6, 5],
     [7, 6, 5, 4]
-]) 
+])
 
 try:
     print(matrix_1 + matrix_2)

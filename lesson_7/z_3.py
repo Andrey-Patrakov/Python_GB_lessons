@@ -5,7 +5,7 @@ class Cell:
             if count > 0:
                 self.__count = count
                 return
-            
+
             raise ValueError("Количество клеток должно быть больше 0")
 
         raise TypeError("Неверный тип данных")
@@ -15,11 +15,11 @@ class Cell:
             return Cell(self.__count + other.__count)
 
         raise TypeError("Неверный тип данных")
-    
+
     def __sub__(self, other):
         if type(other) is Cell:
             return Cell(self.__count - other.__count)
-            
+
         raise TypeError("Неверный тип данных")
 
     def __mul__(self, other):
@@ -34,24 +34,24 @@ class Cell:
             return Cell(res)
 
         raise TypeError("Неверный тип данных")
-    
+
     def __str__(self):
         return str(self.__count)
 
     @staticmethod
     def make_order(cell, cells_per_row):
         if type(cell) is Cell and type(cells_per_row) is int:
-            
+
             res = "\n".join([
-                "*" * cells_per_row for i in range(cell.__count // cells_per_row)
+                "*" * cells_per_row for i in range(cell.__count // cells_per_row) # noqa
             ])
             return f'{res}\n{"*" * (cell.__count % cells_per_row)}'
-            
+
         raise TypeError("Неверный тип данных")
 
 
 try:
-    cell_0 = Cell(0) # Количество клеток должно быть больше 0
+    cell_0 = Cell(0)  # Количество клеток должно быть больше 0
 except Exception as e:
     print(e)
 
@@ -62,7 +62,7 @@ cell_3 = cell_1 + cell_2
 print(f'Сложение: {cell_3}')
 
 try:
-    print(f'Вычитание: {cell_1 - cell_2}') # Количество клеток должно быть больше 0
+    print(f'Вычитание: {cell_1 - cell_2}')  # Количество клеток должно быть больше 0 # noqa
 except Exception as e:
     print(e)
 
@@ -70,7 +70,7 @@ print(f'Вычитание: {cell_2 - cell_1}')
 print(f'Умножение: {cell_1 * cell_2}')
 
 try:
-    print(f'Умножение: {cell_1 * 2}') # Неверный тип данных
+    print(f'Умножение: {cell_1 * 2}')  # Неверный тип данных
 except Exception as e:
     print(e)
 
