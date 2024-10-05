@@ -24,14 +24,14 @@ class Equipment:
             self.scanner_type = args["scanner_type"]
 
     def __add__(self, other):
-        if self.model == other.model and type(self) == type(other):
+        if self.model == other.model and type(self) is type(other):
             return type(self)(
                 self.model, self.count + other.count, **self.get_args()
             )
         raise TypeError("Неверный тип данных")
 
     def __sub__(self, other):
-        if self.model == other.model and type(self) == type(other):
+        if self.model == other.model and type(self) is type(other):
             return type(self)(
                 self.model, self.count - other.count, **self.get_args()
             )
