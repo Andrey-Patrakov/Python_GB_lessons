@@ -6,10 +6,10 @@ def fact(n):
         out *= i
         yield out, i
 
+
 try:
     a = int(input("Введите целое число: "))
     for f, i in fact(a):
         print(f'{i}! = {f}')
-except:
+except Exception:
     print("Неверный ввод данных")
-

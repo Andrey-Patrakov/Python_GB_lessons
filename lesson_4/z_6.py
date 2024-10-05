@@ -2,7 +2,7 @@ import itertools
 
 try:
     a = int(input("Введите целое число: "))
-except:
+except Exception:
     print("Неверный ввод данных")
 
 i = 0
@@ -21,4 +21,3 @@ for ch in itertools.cycle(my_string):
     if i > 30:
         break
     i += 1
-
