@@ -1,2 +1,1 @@
-# Python_GB_lessons
-ДЗ по курсу Python
+# Домашние работы по курсу Python
