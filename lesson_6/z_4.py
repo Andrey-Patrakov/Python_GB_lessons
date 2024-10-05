@@ -5,7 +5,7 @@ class Car:
         self.color = color
         self.name = name
         self.is_police = is_police
-    
+
     def go(self):
         return 'Машина поехала'
 
@@ -17,11 +17,12 @@ class Car:
             return 'Машина повернула налево'
         elif direction == 'right':
             return 'Машина повернула направо'
-        
+
         return 'Машина продолжает ехать прямо'
-    
+
     def show_speed(self):
         return str(self.speed)
+
 
 class TownCar(Car):
     def __init__(self, speed, color, name, is_police: bool):
@@ -32,6 +33,7 @@ class TownCar(Car):
             return f'Слишком высокая скорость! {self.speed} > 60'
 
         return self.speed
+
 
 class SportCar(Car):
     def __init__(self, speed, color, name, is_police: bool):
@@ -48,9 +50,11 @@ class WorkCar(Car):
 
         return self.speed
 
+
 class PoliceCar(Car):
     def __init__(self, speed, color, name, is_police: bool):
         super().__init__(speed, color, name, is_police)
+
 
 town_car = TownCar(80, 'red', 'Lada 21099', False)
 sport_car = SportCar(80, 'yellow', 'Dodge Viper', False)
@@ -103,4 +107,3 @@ print(police_car.turn('left'))
 print(police_car.turn('right'))
 print(police_car.turn('up'))
 print(police_car.show_speed())
-

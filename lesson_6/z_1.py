@@ -1,11 +1,12 @@
 from time import time, sleep
 
+
 class TrafficLight:
 
     def __init__(self, color):
         self.__color = color
         self.__time = 0
-    
+
     def running(self, color):
         colors = ('red', 'yellow', 'green')
         if self.__color == colors[colors.index(color) - 1]:
@@ -13,10 +14,10 @@ class TrafficLight:
                 self.__color = color
                 self._set__time(color)
                 return self.__color
-            
+
             raise Exception('Слишком рано!')
         raise Exception('Неверный порядок переключения цветов')
-    
+
     def _set__time(self, color):
         if color == 'red':
             self.__time = time() + 7
